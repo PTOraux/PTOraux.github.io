@@ -802,9 +802,13 @@
 			let chunk = 15; // Nombre de mots par paquet
 			let output = document.getElementById("output");
 			output.setAttribute('style', 'white-space: pre;');			
-			output.textContent = "     Planches: " ;
+			output.innerHTML = "     Planches: " ;
 			for (let i = 0; i < numbers.length; i += chunk) {
-				output.textContent+=numbers.slice(i, i + chunk).join(', ')+"\n"+"\xa0".repeat(22);
+				for (let j = 0; j < (numbers.slice(i, i + chunk)).length; j += 1) {
+					let nb=numbers[j]
+					output.innerHTML+= `<a href="http://PTOraux.github.io/sujet-${nb}.png"  target="_blank">${nb}</a>, `;
+				}
+				output.innerHTML+="\n"+"\xa0".repeat(22)
 			}
 		  } else {
 			// Find the numbers that correspond to any of the selected themes
@@ -812,18 +816,18 @@
 			
 			// Eliminate duplicates from the result
 			numbers = [...new Set(numbers)];
-			
-			
-
-					
 
 			// Display the numbers
 			let chunk = 15; // Nombre de mots par paquet
 			let output = document.getElementById("output");
 			output.setAttribute('style', 'white-space: pre;');
-			output.textContent = "     Planches : " ;
+			output.innerHTML = "     Planches: " ;
 			for (let i = 0; i < numbers.length; i += chunk) {
-				output.textContent+=numbers.slice(i, i + chunk).join(', ')+"\n"+"\xa0".repeat(22);
+				for (let j = 0; j < (numbers.slice(i, i + chunk)).length; j += 1) {
+					let nb=numbers[j]
+					output.innerHTML+= `<a href="http://PTOraux.github.io/sujet-${nb}.png"  target="_blank">${nb}</a>, `;
+				}
+				output.innerHTML+="\n"+"\xa0".repeat(22)
 			}
 
 		  }
