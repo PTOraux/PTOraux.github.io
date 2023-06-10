@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html>
   
-  <head>
+<head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>Thèmes et Planches</title>
-  </head>
-  <style>
+</head>
+<style>
     table td {
         padding: 0 50px;
     }
@@ -15,8 +15,39 @@
 	background-size: cover;
 	background-attachment:fixed;
 	}
-  </style>
-  <body>
+</style>
+<style>
+	.title {
+	  cursor: pointer;
+	}
+
+	.content {
+	  display: none;
+	}
+
+	.triangle {
+	  display: inline-block;
+	  transition: transform 0.3s;
+	}
+
+	.rotate {
+	  transform: rotate(90deg);
+	}
+</style>
+<script>
+	function toggleContent(id) {
+	  var content = document.getElementById("content" + id);
+	  var triangle = document.getElementById("triangle" + id);
+	  if (content.style.display === "none") {
+	    content.style.display = "block";
+	    triangle.classList.add("rotate");
+	  } else {
+	    content.style.display = "none";
+	    triangle.classList.remove("rotate");
+	  }
+	}
+</script>
+<body>
     <h1>Thèmes et Planches</h1>
     
 	<form id="form">
@@ -160,7 +191,7 @@
 		<tr>
         <td VALIGN=TOP><b>Oral II : </b><br>
 			&emsp;<input type="checkbox" id="Planche-II-1" name="numbers" value="II-1">
-			<label for="number-II-1"><a href="http://PTOraux.github.io/sujet-II-1.png"  target="_blank">Planche 1</a></label><br>
+			<label for="number-II-1"><a href="http://PTOraux.github.io/sujet-II-1.png"  target="_blank">Planche 1 <span onclick="toggleContent(1)">  <span class="triangle" id="triangle1">&#9654;</span> </span><div class="content" id="content1">  <p>Voici le texte correspondant au titre 1.</p></div></a></label><br>
 			&emsp;<input type="checkbox" id="Planche-II-2" name="numbers" value="II-2">
 			<label for="number-II-2"><a href="http://PTOraux.github.io/sujet-II-2.png"  target="_blank">Planche 2</a></label><br>
 			&emsp;<input type="checkbox" id="Planche-II-3" name="numbers" value="II-3">
@@ -432,7 +463,7 @@
 	<br>
     <div id="output"></div>
 
-    <script>
+<script>
 	// Define your table of numbers and themes
       let table = [
         {number: "II-1", theme: "Endomorphisme/Ker f/Imf"},
@@ -871,6 +902,6 @@
 		  document.getElementById("numbers-container").style.display = "block";
 		}
 	});
-    </script>
-  </body>
+</script>
+</body>
 </html>
