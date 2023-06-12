@@ -1,0 +1,1797 @@
+
+<!DOCTYPE html>
+<html>
+  
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>Thèmes et Planches</title>
+</head>
+<style>
+    table td {
+        padding:  0 50px;
+    }
+  body {
+	background-image: url('./fond.avif');
+	background-size: cover;
+	background-attachment:fixed;
+	}
+</style>
+<style>
+	.title {
+	  cursor: pointer;
+	}
+
+	.content {
+	  display: none;
+	}
+
+	.triangle {
+	  display: inline-block;
+	  transition: transform 0.3s;
+	}
+
+	.rotate {
+	  transform: rotate(90deg);
+	}
+</style>
+<script>
+	function toggleContent(id) {
+	  var content = document.getElementById("content" + id);
+	  var triangle = document.getElementById("triangle" + id);
+	  if (content.style.display === "none") {
+	    content.style.display = "block";
+	    triangle.classList.add("rotate");
+	  } else {
+	    content.style.display = "none";
+	    triangle.classList.remove("rotate");
+	  }
+	}
+</script>
+<body>
+    <h1>Thèmes et Planches</h1>
+    
+	<form id="form">
+      <label for="type">Recherche à partir des thèmes ou des planches ?</label><br>
+      <select name="type" id="type">
+        <option value="themes">Thèmes</option>
+        <option value="numbers">Planches</option>
+      </select><br>
+		
+      <br>
+      <button type="reset" onClick="window.location.reload()"> Réinitialiser </button>
+      <div id="themes-container">
+        <p>Choisissez un ou plusieurs thèmes et une condition :</p>
+		<table>
+		<tr>
+        <td VALIGN=TOP><b>Analyse  : </b><br>
+			&emsp;<input type="checkbox" id="theme-A" name="themes" value="Théorème  de la limite monotone">
+			<label for="theme-A">Théorème  de la limite monotone</label><br>
+			&emsp;<input type="checkbox" id="theme-B" name="themes" value="TVI/Th. de la bijection">
+			<label for="theme-B">TVI/Th. de la bijection</label><br>
+			&emsp;<input type="checkbox" id="theme-C" name="themes" value="Th. De Rolle">
+			<label for="theme-C">Th. De Rolle</label><br>
+			&emsp;<input type="checkbox" id="theme-D" name="themes" value="Suites arith.géo./réc.lin.2e.ordre">
+			<label for="theme-D">Suites arith.géo./réc.lin.2e.ordre</label><br>
+			&emsp;<input type="checkbox" id="theme-E" name="themes" value="Somme de Riemann">
+			<label for="theme-E">Somme de Riemann</label><br>
+			&emsp;<input type="checkbox" id="theme-F" name="themes" value="Suite implicite">
+			<label for="theme-F">Suite implicite</label><br>
+			&emsp;<input type="checkbox" id="theme-G" name="themes" value="CV intégrale">
+			<label for="theme-G">CV intégrale</label><br>
+			&emsp;<input type="checkbox" id="theme-H" name="themes" value="IPP">
+			<label for="theme-H">IPP</label><br>
+			&emsp;<input type="checkbox" id="theme-I" name="themes" value="Chgt de variable">
+			<label for="theme-I">Chgt de variable</label><br>
+			&emsp;<input type="checkbox" id="theme-J" name="themes" value="Suite intégrale">
+			<label for="theme-J">Suite intégrale</label><br>
+			&emsp;<input type="checkbox" id="theme-K" name="themes" value="TFA">
+			<label for="theme-K">TFA</label><br>
+			&emsp;<input type="checkbox" id="theme-L" name="themes" value="Int. à param.">
+			<label for="theme-L">Int. à param.</label><br>
+			&emsp;<input type="checkbox" id="theme-M" name="themes" value="DL">
+			<label for="theme-M">DL</label><br>
+			&emsp;<input type="checkbox" id="theme-N" name="themes" value="Suite/Série num.">
+			<label for="theme-N">Suite/Série num.</label><br>
+			&emsp;<input type="checkbox" id="theme-O" name="themes" value="Série entière">
+			<label for="theme-O">Série entière</label><br>
+			&emsp;<input type="checkbox" id="theme-P" name="themes" value="DSE ">
+			<label for="theme-P">DSE </label><br>
+			&emsp;<input type="checkbox" id="theme-Q" name="themes" value="Equa. différentielle">
+			<label for="theme-Q">Equa. différentielle</label><br>
+			&emsp;<input type="checkbox" id="theme-R" name="themes" value="Fns de 2  var./extrem.">
+			<label for="theme-R">Fns de 2  var./extrem.</label><br>
+			&emsp;<input type="checkbox" id="theme-S" name="themes" value="Calcul de f^(n)">
+			<label for="theme-S">Calcul de f^(n)</label><br>
+        </td>
+		<td VALIGN=TOP><b>Algèbre :  </b><br>
+			&emsp;<input type="checkbox" id="theme-T" name="themes" value="Polynômes">
+			<label for="theme-T">Polynômes</label><br>
+			&emsp;<input type="checkbox" id="theme-U" name="themes" value="Racines n-ème">
+			<label for="theme-U">Racines n-ème</label><br>
+			&emsp;<input type="checkbox" id="theme-V" name="themes" value="Base">
+			<label for="theme-V">Base</label><br>
+			&emsp;<input type="checkbox" id="theme-W" name="themes" value="Endomorphisme/Ker f/Imf">
+			<label for="theme-W">Endomorphisme/Ker f/Imf</label><br>
+			&emsp;<input type="checkbox" id="theme-X" name="themes" value="Somme directe/SEV supplémentaires">
+			<label for="theme-X">Somme directe/SEV supplémentaires</label><br>
+			&emsp;<input type="checkbox" id="theme-Y" name="themes" value="Inversibilité matrice">
+			<label for="theme-Y">Inversibilité matrice</label><br>
+			&emsp;<input type="checkbox" id="theme-Z" name="themes" value="Poly. caractéristique">
+			<label for="theme-Z">Poly. caractéristique</label><br>
+			&emsp;<input type="checkbox" id="theme-AA" name="themes" value="Diagonalisabilité">
+			<label for="theme-AA">Diagonalisabilité</label><br>
+			&emsp;<input type="checkbox" id="theme-AB" name="themes" value="Trigonalisabilité">
+			<label for="theme-AB">Trigonalisabilité</label><br>
+			&emsp;<input type="checkbox" id="theme-AC" name="themes" value="Etude théorique des éléments propres">
+			<label for="theme-AC">Etude théorique des éléments propres</label><br>
+			&emsp;<input type="checkbox" id="theme-AD" name="themes" value="A^n">
+			<label for="theme-AD">A^n</label><br>
+			&emsp;<input type="checkbox" id="theme-AE" name="themes" value="Produit scalaire">
+			<label for="theme-AE">Produit scalaire</label><br>
+			&emsp;<input type="checkbox" id="theme-AF" name="themes" value="Projecteur">
+			<label for="theme-AF">Projecteur</label><br>
+			&emsp;<input type="checkbox" id="theme-AG" name="themes" value="Projection/dist./Min">
+			<label for="theme-AG">Projection/dist./Min</label><br>
+			&emsp;<input type="checkbox" id="theme-AH" name="themes" value="Esp. euclid./Isométries">
+			<label for="theme-AH">Esp. euclid./Isométries</label><br>
+			&emsp;<input type="checkbox" id="theme-AI" name="themes" value="orthogonal de F & orthogonalité">
+			<label for="theme-AI">orthogonal de F & orthogonalité</label><br>
+		<br></td>
+        
+		<td VALIGN=TOP><b>Probabilités : </b><br>
+			&emsp;<input type="checkbox" id="theme-AJ" name="themes" value="Probas & algèbre">
+			<label for="theme-AJ">Probas & algèbre</label><br>
+			&emsp;<input type="checkbox" id="theme-AK" name="themes" value="Dénombrement">
+			<label for="theme-AK">Dénombrement</label><br>
+			&emsp;<input type="checkbox" id="theme-AL" name="themes" value="E(X) ou V(X)">
+			<label for="theme-AL">E(X) ou V(X)</label><br>
+			&emsp;<input type="checkbox" id="theme-AM" name="themes" value="Probas totales">
+			<label for="theme-AM">Probas totales</label><br>
+			&emsp;<input type="checkbox" id="theme-AN" name="themes" value="Bayes">
+			<label for="theme-AN">Bayes</label><br>
+			&emsp;<input type="checkbox" id="theme-AO" name="themes" value="Loi conjointe (X,Y)">
+			<label for="theme-AO">Loi conjointe (X,Y)</label><br>
+			&emsp;<input type="checkbox" id="theme-AP" name="themes" value="Indépendance">
+			<label for="theme-AP">Indépendance</label><br>
+			&emsp;<input type="checkbox" id="theme-AQ" name="themes" value="Série génératrice">
+			<label for="theme-AQ">Série génératrice</label><br>
+		<br></td>
+        
+		<td VALIGN=TOP><b>Géométrie : </b><br>
+			&emsp;<input type="checkbox" id="theme-AR" name="themes" value="Géométrie  de base">
+			<label for="theme-AR">Géométrie  de base</label><br>
+			&emsp;<input type="checkbox" id="theme-AS" name="themes" value="Nbs complexes/Géom.">
+			<label for="theme-AS">Nbs complexes/Géom.</label><br>
+			&emsp;<input type="checkbox" id="theme-AT" name="themes" value="Courbe paramétrée">
+			<label for="theme-AT">Courbe paramétrée</label><br>
+			&emsp;<input type="checkbox" id="theme-AU" name="themes" value="Enveloppe droites">
+			<label for="theme-AU">Enveloppe droites</label><br>
+			&emsp;<input type="checkbox" id="theme-AV" name="themes" value="Proj. orthogonale">
+			<label for="theme-AV">Proj. orthogonale</label><br>
+			&emsp;<input type="checkbox" id="theme-AW" name="themes" value="Etude Surface">
+			<label for="theme-AW">Etude Surface</label><br>
+			&emsp;<input type="checkbox" id="theme-AX" name="themes" value="Droite/plan tangent">
+			<label for="theme-AX">Droite/plan tangent</label><br>
+			&emsp;<input type="checkbox" id="theme-AY" name="themes" value="Coniques">
+			<label for="theme-AY">Coniques</label><br>
+		<br></td>
+		</tr>
+		</table>
+		
+		<br>
+		<label for="condition">Condition :</label><br>
+        <select name="condition" id="condition">
+          <option value="and">And</option>
+          <option value="or">Or</option>
+        </select><br>
+      </div>
+      <div id="numbers-container" style="display: none;">
+        <p>Choisir une planche:</p>
+		<table cellspacing="40">
+		<tr>
+       		<td VALIGN=TOP><b>Oral II : </b><br>
+						&emsp;<input type="checkbox" id="Planche-II-1" name="numbers" value="II-1">
+			<label for="number-II-1"> <span onclick="toggleContent('II-1')">Planche 1 <Font size=4.5pt><span class="triangle" id="triangleII-1">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-1" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-1.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1-nSfOLYAbFXRvZjiRmC3VYqbn8SzmNUS"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-2" name="numbers" value="II-2">
+			<label for="number-II-2"> <span onclick="toggleContent('II-2')">Planche 2 <Font size=4.5pt><span class="triangle" id="triangleII-2">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-2" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-2.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=141DWoxilJ7kbLdI8DnKh6m4J_kSdGSZ0"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-3" name="numbers" value="II-3">
+			<label for="number-II-3"> <span onclick="toggleContent('II-3')">Planche 3 <Font size=4.5pt><span class="triangle" id="triangleII-3">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-3" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-3.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1flzDXWbn_hyFmZOsjLX_5DakuPBEwhQQ"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-4" name="numbers" value="II-4">
+			<label for="number-II-4"> <span onclick="toggleContent('II-4')">Planche 4 <Font size=4.5pt><span class="triangle" id="triangleII-4">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-4" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-4.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1afNj_6Rb_djj5mTnDhlspm8lgegrxtFJ"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-5" name="numbers" value="II-5">
+			<label for="number-II-5"> <span onclick="toggleContent('II-5')">Planche 5 <Font size=4.5pt><span class="triangle" id="triangleII-5">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-5" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-5.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=11LRDEm8VKcgvUP9WOFiG8Bujqpn3SuWB"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-6" name="numbers" value="II-6">
+			<label for="number-II-6"> <span onclick="toggleContent('II-6')">Planche 6 <Font size=4.5pt><span class="triangle" id="triangleII-6">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-6" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-6.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1TeF5sYb67sPDtAaQx16CsiD7UQpjYTDI"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-7" name="numbers" value="II-7">
+			<label for="number-II-7"> <span onclick="toggleContent('II-7')">Planche 7 <Font size=4.5pt><span class="triangle" id="triangleII-7">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-7" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-7.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1UhAbSHBNTfEXy9N_3fLrd8NK4zAOmlz9"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-8" name="numbers" value="II-8">
+			<label for="number-II-8"> <span onclick="toggleContent('II-8')">Planche 8 <Font size=4.5pt><span class="triangle" id="triangleII-8">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-8" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-8.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=19oZuoBqgXna55u0yzT6DQdEt9eI6AGsC"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-9" name="numbers" value="II-9">
+			<label for="number-II-9"> <span onclick="toggleContent('II-9')">Planche 9 <Font size=4.5pt><span class="triangle" id="triangleII-9">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-9" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-9.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1Q7MI5jb_u1T7ws64fhPQN1_M9B5F1rAW"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-10" name="numbers" value="II-10">
+			<label for="number-II-10"> <span onclick="toggleContent('II-10')">Planche 10 <Font size=4.5pt><span class="triangle" id="triangleII-10">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-10" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-10.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=119ib_uRrrxgjLd7B-GBdxq_JOCPJXVk1"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-11" name="numbers" value="II-11">
+			<label for="number-II-11"> <span onclick="toggleContent('II-11')">Planche 11 <Font size=4.5pt><span class="triangle" id="triangleII-11">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-11" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-11.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1kKO3MPuR6N_7oTvV-WK6U-OVHC5yXd3n"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-12" name="numbers" value="II-12">
+			<label for="number-II-12"> <span onclick="toggleContent('II-12')">Planche 12 <Font size=4.5pt><span class="triangle" id="triangleII-12">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-12" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-12.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1SYvopLkmvRn2AAK06FZqKWDdDNVKId6w"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-13" name="numbers" value="II-13">
+			<label for="number-II-13"> <span onclick="toggleContent('II-13')">Planche 13 <Font size=4.5pt><span class="triangle" id="triangleII-13">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-13" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-13.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1WTyCOn98XyxCt767IAP1-lSeH69mgYmC"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-14" name="numbers" value="II-14">
+			<label for="number-II-14"> <span onclick="toggleContent('II-14')">Planche 14 <Font size=4.5pt><span class="triangle" id="triangleII-14">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-14" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-14.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1D7fNLFxQEoTP95OkvIYGiXVHj0jkMfdC"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-15" name="numbers" value="II-15">
+			<label for="number-II-15"> <span onclick="toggleContent('II-15')">Planche 15 <Font size=4.5pt><span class="triangle" id="triangleII-15">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-15" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-15.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1X2qrauYCzIXfzvjnJZLj17yYN7m3tUxl"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-16" name="numbers" value="II-16">
+			<label for="number-II-16"> <span onclick="toggleContent('II-16')">Planche 16 <Font size=4.5pt><span class="triangle" id="triangleII-16">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-16" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-16.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1h-szMRxVtwro5EEjWUdsQ-vagdTg91Xs"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-17" name="numbers" value="II-17">
+			<label for="number-II-17"> <span onclick="toggleContent('II-17')">Planche 17 <Font size=4.5pt><span class="triangle" id="triangleII-17">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-17" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-17.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1aIgE-qeBejmL5YECbIuI-AtmLgtkder7"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-18" name="numbers" value="II-18">
+			<label for="number-II-18"> <span onclick="toggleContent('II-18')">Planche 18 <Font size=4.5pt><span class="triangle" id="triangleII-18">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-18" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-18.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1zjc2u6yTwEE343C17XBER1luk0Ak9c6z"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-19" name="numbers" value="II-19">
+			<label for="number-II-19"> <span onclick="toggleContent('II-19')">Planche 19 <Font size=4.5pt><span class="triangle" id="triangleII-19">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-19" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-19.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1ZkObSYFMt3oW99Oiovp-d72tg_8xQX9G"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-20" name="numbers" value="II-20">
+			<label for="number-II-20"> <span onclick="toggleContent('II-20')">Planche 20 <Font size=4.5pt><span class="triangle" id="triangleII-20">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-20" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-20.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1_Ocky6gCLVEdisY4MZc3be-hPZwX0QU_"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-21" name="numbers" value="II-21">
+			<label for="number-II-21"> <span onclick="toggleContent('II-21')">Planche 21 <Font size=4.5pt><span class="triangle" id="triangleII-21">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-21" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-21.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1SEAYKYRM-JApna6k94Hsp1VfRNn9aVPu"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-22" name="numbers" value="II-22">
+			<label for="number-II-22"> <span onclick="toggleContent('II-22')">Planche 22 <Font size=4.5pt><span class="triangle" id="triangleII-22">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-22" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-22.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1GwSaDprarFa9zmInU6-HQKk2Ew58x_mb"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-23" name="numbers" value="II-23">
+			<label for="number-II-23"> <span onclick="toggleContent('II-23')">Planche 23 <Font size=4.5pt><span class="triangle" id="triangleII-23">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-23" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-23.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1J8qIv9VF6uWJ23V8YC9vTAWqP8xubPrg"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-24" name="numbers" value="II-24">
+			<label for="number-II-24"> <span onclick="toggleContent('II-24')">Planche 24 <Font size=4.5pt><span class="triangle" id="triangleII-24">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-24" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-24.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1adTBidmmAp-yR9ErFXYBFWNdyxwSEB5S"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-25" name="numbers" value="II-25">
+			<label for="number-II-25"> <span onclick="toggleContent('II-25')">Planche 25 <Font size=4.5pt><span class="triangle" id="triangleII-25">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-25" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-25.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-26" name="numbers" value="II-26">
+			<label for="number-II-26"> <span onclick="toggleContent('II-26')">Planche 26 <Font size=4.5pt><span class="triangle" id="triangleII-26">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-26" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-26.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1zzjpuV7ruPAoV0kxfbGzhImPLTqxVHp6"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-27" name="numbers" value="II-27">
+			<label for="number-II-27"> <span onclick="toggleContent('II-27')">Planche 27 <Font size=4.5pt><span class="triangle" id="triangleII-27">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-27" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-27.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1UZBJ5HtMy77XMl-CTg3Yo2VdT9M-L65R"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-28" name="numbers" value="II-28">
+			<label for="number-II-28"> <span onclick="toggleContent('II-28')">Planche 28 <Font size=4.5pt><span class="triangle" id="triangleII-28">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-28" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-28.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1IKA0jCbY-IHPN38zAvXfzxL795IV9UdT"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+		</td>
+		<td VALIGN=TOP><b> </b><br>
+			&emsp;<input type="checkbox" id="Planche-II-29" name="numbers" value="II-29">
+			<label for="number-II-29"> <span onclick="toggleContent('II-29')">Planche 29 <Font size=4.5pt><span class="triangle" id="triangleII-29">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-29" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-29.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1v5a9DyiY7coljN0skbk4LHPQqWNg5ulC"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-30" name="numbers" value="II-30">
+			<label for="number-II-30"> <span onclick="toggleContent('II-30')">Planche 30 <Font size=4.5pt><span class="triangle" id="triangleII-30">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-30" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-30.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1GIrBhPylFBoRmqSH5CjBkt9cFqVr3lFm"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-31" name="numbers" value="II-31">
+			<label for="number-II-31"> <span onclick="toggleContent('II-31')">Planche 31 <Font size=4.5pt><span class="triangle" id="triangleII-31">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-31" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-31.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1ZkrQ8rtBhy_pQnr5DZ7uf90HHMNVYhdh"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-32" name="numbers" value="II-32">
+			<label for="number-II-32"> <span onclick="toggleContent('II-32')">Planche 32 <Font size=4.5pt><span class="triangle" id="triangleII-32">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-32" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-32.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1smYJnytax5veJEJI1937Pf0jXOfiF5rY"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-33" name="numbers" value="II-33">
+			<label for="number-II-33"> <span onclick="toggleContent('II-33')">Planche 33 <Font size=4.5pt><span class="triangle" id="triangleII-33">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-33" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-33.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1ZS1Wi3zf4TRvhIXkrpDC84cZP6WWQmZ9"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-34" name="numbers" value="II-34">
+			<label for="number-II-34"> <span onclick="toggleContent('II-34')">Planche 34 <Font size=4.5pt><span class="triangle" id="triangleII-34">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-34" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-34.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1ln6HM557G8dY-asw__RzJlMUzta7ye3W"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-35" name="numbers" value="II-35">
+			<label for="number-II-35"> <span onclick="toggleContent('II-35')">Planche 35 <Font size=4.5pt><span class="triangle" id="triangleII-35">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-35" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-35.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1U7InIquM1lpUDGpVa7bebNqsdxbfkqkm"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-36" name="numbers" value="II-36">
+			<label for="number-II-36"> <span onclick="toggleContent('II-36')">Planche 36 <Font size=4.5pt><span class="triangle" id="triangleII-36">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-36" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-36.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-37" name="numbers" value="II-37">
+			<label for="number-II-37"> <span onclick="toggleContent('II-37')">Planche 37 <Font size=4.5pt><span class="triangle" id="triangleII-37">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-37" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-37.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1QnA-o42H_4cO-N4ojWecdSyckn2O0tNy"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-38" name="numbers" value="II-38">
+			<label for="number-II-38"> <span onclick="toggleContent('II-38')">Planche 38 <Font size=4.5pt><span class="triangle" id="triangleII-38">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-38" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-38.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1oMfVhpwkFHJwPjqVWNBaVHXbb0pOOEaF"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-39" name="numbers" value="II-39">
+			<label for="number-II-39"> <span onclick="toggleContent('II-39')">Planche 39 <Font size=4.5pt><span class="triangle" id="triangleII-39">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-39" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-39.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1QZ7SkTLqo2lAWOmXoqSeLLbelJONPM2h"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-40" name="numbers" value="II-40">
+			<label for="number-II-40"> <span onclick="toggleContent('II-40')">Planche 40 <Font size=4.5pt><span class="triangle" id="triangleII-40">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-40" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-40.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1x_9PzuiTCb1Kqw48coVAX7lD8ZAlxmWn"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-41" name="numbers" value="II-41">
+			<label for="number-II-41"> <span onclick="toggleContent('II-41')">Planche 41 <Font size=4.5pt><span class="triangle" id="triangleII-41">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-41" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-41.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1nB9zdS0s9EOxtSrtKNHXi8m5kjG5e91J"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-42" name="numbers" value="II-42">
+			<label for="number-II-42"> <span onclick="toggleContent('II-42')">Planche 42 <Font size=4.5pt><span class="triangle" id="triangleII-42">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-42" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-42.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1S7WZUi635rZifL8-rN-1rz4XM1dbMgSP"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-43" name="numbers" value="II-43">
+			<label for="number-II-43"> <span onclick="toggleContent('II-43')">Planche 43 <Font size=4.5pt><span class="triangle" id="triangleII-43">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-43" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-43.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1G2pjKqOChbbkZdpQiNf90etSqjQi4Hdc"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-44" name="numbers" value="II-44">
+			<label for="number-II-44"> <span onclick="toggleContent('II-44')">Planche 44 <Font size=4.5pt><span class="triangle" id="triangleII-44">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-44" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-44.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1S1cJoTBqSh12fG9YTVnpc887p0PkdQJu"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-45" name="numbers" value="II-45">
+			<label for="number-II-45"> <span onclick="toggleContent('II-45')">Planche 45 <Font size=4.5pt><span class="triangle" id="triangleII-45">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-45" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-45.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1KE4UJesBC8MFpnpBrOGMpGhvGBtLgijM"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-46" name="numbers" value="II-46">
+			<label for="number-II-46"> <span onclick="toggleContent('II-46')">Planche 46 <Font size=4.5pt><span class="triangle" id="triangleII-46">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-46" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-46.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-47" name="numbers" value="II-47">
+			<label for="number-II-47"> <span onclick="toggleContent('II-47')">Planche 47 <Font size=4.5pt><span class="triangle" id="triangleII-47">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-47" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-47.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1Haz5lHTZuvzlXWgpC7xKsOflgG1JoJMU"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-48" name="numbers" value="II-48">
+			<label for="number-II-48"> <span onclick="toggleContent('II-48')">Planche 48 <Font size=4.5pt><span class="triangle" id="triangleII-48">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-48" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-48.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1LClv0oAchZTQo2WkFoBHO3le-MPL60GN"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-49" name="numbers" value="II-49">
+			<label for="number-II-49"> <span onclick="toggleContent('II-49')">Planche 49 <Font size=4.5pt><span class="triangle" id="triangleII-49">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-49" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-49.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1t3FaUYyMy59M4di1j5Kb5lrMF_qyfvd8"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-50" name="numbers" value="II-50">
+			<label for="number-II-50"> <span onclick="toggleContent('II-50')">Planche 50 <Font size=4.5pt><span class="triangle" id="triangleII-50">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-50" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-50.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1mm1k466zfgSNgoRWy21PBiM1F-6ynYs3"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-51" name="numbers" value="II-51">
+			<label for="number-II-51"> <span onclick="toggleContent('II-51')">Planche 51 <Font size=4.5pt><span class="triangle" id="triangleII-51">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-51" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-51.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1MntHZaenWaOqBwSBWlUbq4WjaVG0_ghT"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-52" name="numbers" value="II-52">
+			<label for="number-II-52"> <span onclick="toggleContent('II-52')">Planche 52 <Font size=4.5pt><span class="triangle" id="triangleII-52">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-52" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-52.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=19I0G-YzXNmQoLMhorHri_pJNSLoaRAAw"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-53" name="numbers" value="II-53">
+			<label for="number-II-53"> <span onclick="toggleContent('II-53')">Planche 53 <Font size=4.5pt><span class="triangle" id="triangleII-53">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-53" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-53.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1l4t-XRT2bfsNclXWw-1mHUOxJuagdYXN"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-54" name="numbers" value="II-54">
+			<label for="number-II-54"> <span onclick="toggleContent('II-54')">Planche 54 <Font size=4.5pt><span class="triangle" id="triangleII-54">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-54" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-54.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-55" name="numbers" value="II-55">
+			<label for="number-II-55"> <span onclick="toggleContent('II-55')">Planche 55 <Font size=4.5pt><span class="triangle" id="triangleII-55">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-55" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-55.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=131xCDGvo8OxTy344iYrEkhZBV23f-7sN"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-56" name="numbers" value="II-56">
+			<label for="number-II-56"> <span onclick="toggleContent('II-56')">Planche 56 <Font size=4.5pt><span class="triangle" id="triangleII-56">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-56" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-56.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1nuDFgSqDw5NbhhGx5ZO4Vv5ZZ5WHhn6G"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+		</td>
+		<td VALIGN=TOP><b> </b><br>
+			&emsp;<input type="checkbox" id="Planche-II-57" name="numbers" value="II-57">
+			<label for="number-II-57"> <span onclick="toggleContent('II-57')">Planche 57 <Font size=4.5pt><span class="triangle" id="triangleII-57">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-57" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-57.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1CMXQw0t7XJtjVjZZRYH3RDbCL8bWoLsp"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-58" name="numbers" value="II-58">
+			<label for="number-II-58"> <span onclick="toggleContent('II-58')">Planche 58 <Font size=4.5pt><span class="triangle" id="triangleII-58">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-58" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-58.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1PpHrnhm86T-kZyGlHU20zxI9DmQ8Q2iA"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-59" name="numbers" value="II-59">
+			<label for="number-II-59"> <span onclick="toggleContent('II-59')">Planche 59 <Font size=4.5pt><span class="triangle" id="triangleII-59">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-59" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-59.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1sLqW0h6LccpNDs9bMpcxY0jXtOt5iYvq"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-60" name="numbers" value="II-60">
+			<label for="number-II-60"> <span onclick="toggleContent('II-60')">Planche 60 <Font size=4.5pt><span class="triangle" id="triangleII-60">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-60" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-60.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-61" name="numbers" value="II-61">
+			<label for="number-II-61"> <span onclick="toggleContent('II-61')">Planche 61 <Font size=4.5pt><span class="triangle" id="triangleII-61">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-61" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-61.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1pVdwoo3tjO91CgR1Z3FV34ClH-vzild4"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-62" name="numbers" value="II-62">
+			<label for="number-II-62"> <span onclick="toggleContent('II-62')">Planche 62 <Font size=4.5pt><span class="triangle" id="triangleII-62">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-62" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-62.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=15eILNgqlgb_irvuhg5BwEgeiG0ybCNYU"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-63" name="numbers" value="II-63">
+			<label for="number-II-63"> <span onclick="toggleContent('II-63')">Planche 63 <Font size=4.5pt><span class="triangle" id="triangleII-63">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-63" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-63.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-64" name="numbers" value="II-64">
+			<label for="number-II-64"> <span onclick="toggleContent('II-64')">Planche 64 <Font size=4.5pt><span class="triangle" id="triangleII-64">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-64" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-64.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1wbW93971GQ6RDsbNFw4VEjfDebrCH1UW"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-65" name="numbers" value="II-65">
+			<label for="number-II-65"> <span onclick="toggleContent('II-65')">Planche 65 <Font size=4.5pt><span class="triangle" id="triangleII-65">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-65" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-65.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/file/d/1pnoj-l66W6dv_1anb_I4M0KlraEE6mUl"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-66" name="numbers" value="II-66">
+			<label for="number-II-66"> <span onclick="toggleContent('II-66')">Planche 66 <Font size=4.5pt><span class="triangle" id="triangleII-66">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-66" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-66.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1UTfowAlRGc3WOX08-C3-wieyaIn2_0MG"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-67" name="numbers" value="II-67">
+			<label for="number-II-67"> <span onclick="toggleContent('II-67')">Planche 67 <Font size=4.5pt><span class="triangle" id="triangleII-67">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-67" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-67.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1ZnSMP_5vID4FKMTrxIU4B5VYySTqRL5V"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-68" name="numbers" value="II-68">
+			<label for="number-II-68"> <span onclick="toggleContent('II-68')">Planche 68 <Font size=4.5pt><span class="triangle" id="triangleII-68">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-68" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-68.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1Fbek4sLtN9vrUYJ9GiPqvs6EoRe9lZHT"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-69" name="numbers" value="II-69">
+			<label for="number-II-69"> <span onclick="toggleContent('II-69')">Planche 69 <Font size=4.5pt><span class="triangle" id="triangleII-69">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-69" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-69.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1Iwit8o7YMIpAGVXOql-NoGeg6CAoNjc6"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-70" name="numbers" value="II-70">
+			<label for="number-II-70"> <span onclick="toggleContent('II-70')">Planche 70 <Font size=4.5pt><span class="triangle" id="triangleII-70">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-70" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-70.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1d7Orr5DKJFWT2TOEi6paFl_9JWg5ut3L"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-71" name="numbers" value="II-71">
+			<label for="number-II-71"> <span onclick="toggleContent('II-71')">Planche 71 <Font size=4.5pt><span class="triangle" id="triangleII-71">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-71" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-71.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1yHVZMEVhJw8yrqnfksEQheNdQNOou8NA"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-72" name="numbers" value="II-72">
+			<label for="number-II-72"> <span onclick="toggleContent('II-72')">Planche 72 <Font size=4.5pt><span class="triangle" id="triangleII-72">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-72" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-72.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/file/d/16rXqyizd_-J8jKjDC0dbcjTR2ad2bQsL"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-73" name="numbers" value="II-73">
+			<label for="number-II-73"> <span onclick="toggleContent('II-73')">Planche 73 <Font size=4.5pt><span class="triangle" id="triangleII-73">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-73" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-73.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-74" name="numbers" value="II-74">
+			<label for="number-II-74"> <span onclick="toggleContent('II-74')">Planche 74 <Font size=4.5pt><span class="triangle" id="triangleII-74">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-74" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-74.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1Y0XImi67AMsrRp0GwkqBtE04Hydbg7gS"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-75" name="numbers" value="II-75">
+			<label for="number-II-75"> <span onclick="toggleContent('II-75')">Planche 75 <Font size=4.5pt><span class="triangle" id="triangleII-75">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-75" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-75.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1dPOdsWEBkz7x9DvKD-FCMuu2s1f5edtk"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-76" name="numbers" value="II-76">
+			<label for="number-II-76"> <span onclick="toggleContent('II-76')">Planche 76 <Font size=4.5pt><span class="triangle" id="triangleII-76">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-76" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-76.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1-sc58zSaIRnZznGJJ46MYfL9plKOH6j4"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-77" name="numbers" value="II-77">
+			<label for="number-II-77"> <span onclick="toggleContent('II-77')">Planche 77 <Font size=4.5pt><span class="triangle" id="triangleII-77">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-77" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-77.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-78" name="numbers" value="II-78">
+			<label for="number-II-78"> <span onclick="toggleContent('II-78')">Planche 78 <Font size=4.5pt><span class="triangle" id="triangleII-78">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-78" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-78.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-79" name="numbers" value="II-79">
+			<label for="number-II-79"> <span onclick="toggleContent('II-79')">Planche 79 <Font size=4.5pt><span class="triangle" id="triangleII-79">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-79" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-79.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1vuCyeLdWmmDQVDTBF6r4SsRSP6wzmI4H"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-80" name="numbers" value="II-80">
+			<label for="number-II-80"> <span onclick="toggleContent('II-80')">Planche 80 <Font size=4.5pt><span class="triangle" id="triangleII-80">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-80" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-80.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1uu3NhqtRplYUDBtJWq1jxxrCOrCW2iEa"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-81" name="numbers" value="II-81">
+			<label for="number-II-81"> <span onclick="toggleContent('II-81')">Planche 81 <Font size=4.5pt><span class="triangle" id="triangleII-81">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-81" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-81.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-82" name="numbers" value="II-82">
+			<label for="number-II-82"> <span onclick="toggleContent('II-82')">Planche 82 <Font size=4.5pt><span class="triangle" id="triangleII-82">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-82" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-82.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1zVpt1Wsb8flNGoXDkmIVD52f_riwTpkw"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-II-83" name="numbers" value="II-83">
+			<label for="number-II-83"> <span onclick="toggleContent('II-83')">Planche 83 <Font size=4.5pt><span class="triangle" id="triangleII-83">&#9654;</span> </Font></span>
+				<div class="content" id="contentII-83" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-II-83.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1nMhshiilbmFBeU6utoSGWXUppGj9x9i5"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+		</td>
+		<td VALIGN=TOP><b>Mines-Telecom : </b><br>
+			&emsp;<input type="checkbox" id="Planche-MT-84" name="numbers" value="MT-84">
+			<label for="number-MT-84"> <span onclick="toggleContent('MT-84')">Planche 84 <Font size=4.5pt><span class="triangle" id="triangleMT-84">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-84" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-84.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1rmY7FZt6rfkFUoVxvSGDZoFoN2_feTc8"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-85" name="numbers" value="MT-85">
+			<label for="number-MT-85"> <span onclick="toggleContent('MT-85')">Planche 85 <Font size=4.5pt><span class="triangle" id="triangleMT-85">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-85" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-85.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1WelH8xDkyQnhKV-L7Alz5--lIEVYCeXn"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-86" name="numbers" value="MT-86">
+			<label for="number-MT-86"> <span onclick="toggleContent('MT-86')">Planche 86 <Font size=4.5pt><span class="triangle" id="triangleMT-86">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-86" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-86.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=19pLNABgYd9tZsvf-sGUhsE7v5yW85d_V"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-87" name="numbers" value="MT-87">
+			<label for="number-MT-87"> <span onclick="toggleContent('MT-87')">Planche 87 <Font size=4.5pt><span class="triangle" id="triangleMT-87">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-87" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-87.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=157XFa2sVl1iccdA8_8Fz6NaN1Fo-NaKS"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-88" name="numbers" value="MT-88">
+			<label for="number-MT-88"> <span onclick="toggleContent('MT-88')">Planche 88 <Font size=4.5pt><span class="triangle" id="triangleMT-88">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-88" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-88.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1F6rn8H4aaOvoLqFJalBkbm8tisMRM5Dr"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-89" name="numbers" value="MT-89">
+			<label for="number-MT-89"> <span onclick="toggleContent('MT-89')">Planche 89 <Font size=4.5pt><span class="triangle" id="triangleMT-89">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-89" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-89.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1LMqJQ3SLgUt2Vxb3ONg1GpL1oUKvjqtk"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-90" name="numbers" value="MT-90">
+			<label for="number-MT-90"> <span onclick="toggleContent('MT-90')">Planche 90 <Font size=4.5pt><span class="triangle" id="triangleMT-90">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-90" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-90.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1b24PjlRQkTazJQNdk5FaYBPGBT5tplMK"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-91" name="numbers" value="MT-91">
+			<label for="number-MT-91"> <span onclick="toggleContent('MT-91')">Planche 91 <Font size=4.5pt><span class="triangle" id="triangleMT-91">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-91" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-91.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1K6QyEFotXgyjOFFOII0P7GKc9ubj_51B"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-92" name="numbers" value="MT-92">
+			<label for="number-MT-92"> <span onclick="toggleContent('MT-92')">Planche 92 <Font size=4.5pt><span class="triangle" id="triangleMT-92">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-92" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-92.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1JWxImKzQ73A7Zey7ycbedYKC3FAniAIv"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-93" name="numbers" value="MT-93">
+			<label for="number-MT-93"> <span onclick="toggleContent('MT-93')">Planche 93 <Font size=4.5pt><span class="triangle" id="triangleMT-93">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-93" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-93.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1sLW8ikYkjG7SHNYugzQoVUq5NgxU1CoA"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-94" name="numbers" value="MT-94">
+			<label for="number-MT-94"> <span onclick="toggleContent('MT-94')">Planche 94 <Font size=4.5pt><span class="triangle" id="triangleMT-94">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-94" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-94.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1ZtVrn17yxJGdbAETt2HnNhyBU2j8IYnZ"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-95" name="numbers" value="MT-95">
+			<label for="number-MT-95"> <span onclick="toggleContent('MT-95')">Planche 95 <Font size=4.5pt><span class="triangle" id="triangleMT-95">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-95" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-95.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1FeaoVXLK7IPBGktM-Q5Ht9f0QgpD_VA3"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-96" name="numbers" value="MT-96">
+			<label for="number-MT-96"> <span onclick="toggleContent('MT-96')">Planche 96 <Font size=4.5pt><span class="triangle" id="triangleMT-96">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-96" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-96.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1NgLVBbiW2VHqZFBN3JvuwIRZag1Can3G"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-97" name="numbers" value="MT-97">
+			<label for="number-MT-97"> <span onclick="toggleContent('MT-97')">Planche 97 <Font size=4.5pt><span class="triangle" id="triangleMT-97">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-97" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-97.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1f1G7kskVwh8SLRTtZqy28puxlBcfzFyr"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-98" name="numbers" value="MT-98">
+			<label for="number-MT-98"> <span onclick="toggleContent('MT-98')">Planche 98 <Font size=4.5pt><span class="triangle" id="triangleMT-98">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-98" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-98.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1HSPnvEpCzJo2SuV1u_C9NM7i9Yqxz3xy"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-99" name="numbers" value="MT-99">
+			<label for="number-MT-99"> <span onclick="toggleContent('MT-99')">Planche 99 <Font size=4.5pt><span class="triangle" id="triangleMT-99">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-99" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-99.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1CJt61Oq_OLCTp-CHiGijgA3aI6OiIGFO"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-MT-100" name="numbers" value="MT-100">
+			<label for="number-MT-100"> <span onclick="toggleContent('MT-100')">Planche 100 <Font size=4.5pt><span class="triangle" id="triangleMT-100">&#9654;</span> </Font></span>
+				<div class="content" id="contentMT-100" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-MT-100.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+		</td>
+		<td VALIGN=TOP><b>Oral I : </b><br>
+			&emsp;<input type="checkbox" id="Planche-I-101" name="numbers" value="I-101">
+			<label for="number-I-101"> <span onclick="toggleContent('I-101')">Planche 101 <Font size=4.5pt><span class="triangle" id="triangleI-101">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-101" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-101.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-102" name="numbers" value="I-102">
+			<label for="number-I-102"> <span onclick="toggleContent('I-102')">Planche 102 <Font size=4.5pt><span class="triangle" id="triangleI-102">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-102" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-102.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-103" name="numbers" value="I-103">
+			<label for="number-I-103"> <span onclick="toggleContent('I-103')">Planche 103 <Font size=4.5pt><span class="triangle" id="triangleI-103">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-103" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-103.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1tz3OJ9MhHspzeJAI2w1dl3sWZd0VTjeg"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-104" name="numbers" value="I-104">
+			<label for="number-I-104"> <span onclick="toggleContent('I-104')">Planche 104 <Font size=4.5pt><span class="triangle" id="triangleI-104">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-104" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-104.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=12Z_BvF7uNNFf5Zo_QwXeccOhFdNSGZsp"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-105" name="numbers" value="I-105">
+			<label for="number-I-105"> <span onclick="toggleContent('I-105')">Planche 105 <Font size=4.5pt><span class="triangle" id="triangleI-105">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-105" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-105.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1LZEXAebJ74jkH19Y3HcE7h8pnE9PF8k9"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-106" name="numbers" value="I-106">
+			<label for="number-I-106"> <span onclick="toggleContent('I-106')">Planche 106 <Font size=4.5pt><span class="triangle" id="triangleI-106">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-106" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-106.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=15JFnc7_2oLLcnxxUpVh6IEiknT5rE8ra"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-107" name="numbers" value="I-107">
+			<label for="number-I-107"> <span onclick="toggleContent('I-107')">Planche 107 <Font size=4.5pt><span class="triangle" id="triangleI-107">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-107" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-107.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1qj0DrQPJELZ1OJ04diiO9d76uuziG0IP"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-108" name="numbers" value="I-108">
+			<label for="number-I-108"> <span onclick="toggleContent('I-108')">Planche 108 <Font size=4.5pt><span class="triangle" id="triangleI-108">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-108" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-108.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-109" name="numbers" value="I-109">
+			<label for="number-I-109"> <span onclick="toggleContent('I-109')">Planche 109 <Font size=4.5pt><span class="triangle" id="triangleI-109">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-109" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-109.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1zuJEyYviy-_3kR--rCh0uAM_pJqvssXU"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-110" name="numbers" value="I-110">
+			<label for="number-I-110"> <span onclick="toggleContent('I-110')">Planche 110 <Font size=4.5pt><span class="triangle" id="triangleI-110">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-110" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-110.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1kOAeTIq_IFshuPKaok8f0F80zHuEJ4Zr"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-111" name="numbers" value="I-111">
+			<label for="number-I-111"> <span onclick="toggleContent('I-111')">Planche 111 <Font size=4.5pt><span class="triangle" id="triangleI-111">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-111" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-111.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1GvehHz30MuVwMMH1tkXBX-4MGOvdB0So"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-112" name="numbers" value="I-112">
+			<label for="number-I-112"> <span onclick="toggleContent('I-112')">Planche 112 <Font size=4.5pt><span class="triangle" id="triangleI-112">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-112" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-112.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1Nx6D9Vk6mIJLNUfU8uU9-wvooNQ8zfxZ"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-113" name="numbers" value="I-113">
+			<label for="number-I-113"> <span onclick="toggleContent('I-113')">Planche 113 <Font size=4.5pt><span class="triangle" id="triangleI-113">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-113" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-113.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-114" name="numbers" value="I-114">
+			<label for="number-I-114"> <span onclick="toggleContent('I-114')">Planche 114 <Font size=4.5pt><span class="triangle" id="triangleI-114">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-114" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-114.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1bVtPpZzI6XrYu-TczuhjEWwyUo-21cmj"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-115" name="numbers" value="I-115">
+			<label for="number-I-115"> <span onclick="toggleContent('I-115')">Planche 115 <Font size=4.5pt><span class="triangle" id="triangleI-115">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-115" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-115.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1WhjGIL4y6WjQZi2Yj_x9UyPmVmBuvaUB"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-116" name="numbers" value="I-116">
+			<label for="number-I-116"> <span onclick="toggleContent('I-116')">Planche 116 <Font size=4.5pt><span class="triangle" id="triangleI-116">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-116" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-116.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1f6O5wtAKDjkkVrC9Mar19YfmIu0vl7ea"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-117" name="numbers" value="I-117">
+			<label for="number-I-117"> <span onclick="toggleContent('I-117')">Planche 117 <Font size=4.5pt><span class="triangle" id="triangleI-117">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-117" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-117.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-118" name="numbers" value="I-118">
+			<label for="number-I-118"> <span onclick="toggleContent('I-118')">Planche 118 <Font size=4.5pt><span class="triangle" id="triangleI-118">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-118" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-118.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-119" name="numbers" value="I-119">
+			<label for="number-I-119"> <span onclick="toggleContent('I-119')">Planche 119 <Font size=4.5pt><span class="triangle" id="triangleI-119">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-119" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-119.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=11yPZBXdrKbukBtmQTugH_PueSHHsCdZ9"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-120" name="numbers" value="I-120">
+			<label for="number-I-120"> <span onclick="toggleContent('I-120')">Planche 120 <Font size=4.5pt><span class="triangle" id="triangleI-120">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-120" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-120.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-121" name="numbers" value="I-121">
+			<label for="number-I-121"> <span onclick="toggleContent('I-121')">Planche 121 <Font size=4.5pt><span class="triangle" id="triangleI-121">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-121" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-121.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1GzbmnObdYQTL0v0GItxhmCuNHw07tzBF"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-122" name="numbers" value="I-122">
+			<label for="number-I-122"> <span onclick="toggleContent('I-122')">Planche 122 <Font size=4.5pt><span class="triangle" id="triangleI-122">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-122" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-122.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1gb5F4JZHbqHshS9mSg0fdeZqWmhvRdFZ"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-123" name="numbers" value="I-123">
+			<label for="number-I-123"> <span onclick="toggleContent('I-123')">Planche 123 <Font size=4.5pt><span class="triangle" id="triangleI-123">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-123" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-123.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href=""  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-124" name="numbers" value="I-124">
+			<label for="number-I-124"> <span onclick="toggleContent('I-124')">Planche 124 <Font size=4.5pt><span class="triangle" id="triangleI-124">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-124" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-124.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1WfhKVmrff1ai-0Mjhr1FQY7mB5hZz8p2"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-125" name="numbers" value="I-125">
+			<label for="number-I-125"> <span onclick="toggleContent('I-125')">Planche 125 <Font size=4.5pt><span class="triangle" id="triangleI-125">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-125" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-125.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1inPOZ9F7l-cEov5cSW4XVnQxA99252Zz"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-126" name="numbers" value="I-126">
+			<label for="number-I-126"> <span onclick="toggleContent('I-126')">Planche 126 <Font size=4.5pt><span class="triangle" id="triangleI-126">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-126" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-126.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1gg88BG3RJW07QEZutv1UWl1KM2Gl2lwp"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+			&emsp;<input type="checkbox" id="Planche-I-127" name="numbers" value="I-127">
+			<label for="number-I-127"> <span onclick="toggleContent('I-127')">Planche 127 <Font size=4.5pt><span class="triangle" id="triangleI-127">&#9654;</span> </Font></span>
+				<div class="content" id="contentI-127" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-127.png"  target="_blank"> Enoncé </a> 
+				<br>
+				<br>
+				<a href="https://drive.google.com/open?id=1qra6QH704dqDUUq9lHUhbvl7QFawk_yY"  target="_blank"> Corrigé </a></Font>
+				</div>
+			</label></input>
+			<br>
+		</td>
+		</tr>
+	   </table>
+      </div>
+	  <br>
+	  <br>
+      <input type="submit" value="Rechercher">
+    </form>
+	<br>
+    <div id="output"></div>
+
+<script>
+	// Define your table of numbers and themes
+      let table = [
+        {number: "II-1", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "II-2", theme: "DL"},
+	{number: "II-2", theme: "DSE "},
+	{number: "II-2", theme: "Polynômes"},
+	{number: "II-3", theme: "Calcul de f^(n)"},
+	{number: "II-3", theme: "Polynômes"},
+	{number: "II-4", theme: "Polynômes"},
+	{number: "II-4", theme: "Racines n-ème"},
+	{number: "II-5", theme: "Produit scalaire"},
+	{number: "II-5", theme: "Projection/dist./Min"},
+	{number: "II-6", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "II-6", theme: "Diagonalisabilité"},
+	{number: "II-7", theme: "Inversibilité matrice"},
+	{number: "II-7", theme: "A^n"},
+	{number: "II-7", theme: "Probas & algèbre"},
+	{number: "II-7", theme: "Probas totales"},
+	{number: "II-7", theme: "Indépendance"},
+	{number: "II-8", theme: "Inversibilité matrice"},
+	{number: "II-8", theme: "Etude théorique des éltments propres"},
+	{number: "II-8", theme: "Produit scalaire"},
+	{number: "II-9", theme: "DSE "},
+	{number: "II-10", theme: "TFA"},
+	{number: "II-10", theme: "Equa. différentielle"},
+	{number: "II-10", theme: "Polynômes"},
+	{number: "II-10", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "II-10", theme: "Etude théorique des éltments propres"},
+	{number: "II-11", theme: "Projecteur"},
+	{number: "II-12", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "II-12", theme: "Poly. caractéristique"},
+	{number: "II-12", theme: "Diagonalisabilité"},
+	{number: "II-13", theme: "Poly. caractéristique"},
+	{number: "II-13", theme: "Diagonalisabilité"},
+	{number: "II-14", theme: "IPP"},
+	{number: "II-14", theme: "Suite intégrale"},
+	{number: "II-14", theme: "DSE "},
+	{number: "II-14", theme: "Equa. différentielle"},
+	{number: "II-15", theme: "Chgt de variable"},
+	{number: "II-15", theme: "Polynômes"},
+	{number: "II-15", theme: "Base"},
+	{number: "II-16", theme: "E(X) ou V(X)"},
+	{number: "II-16", theme: "Probas totales"},
+	{number: "II-16", theme: "Bayes"},
+	{number: "II-16", theme: "Loi conjointe (X,Y)"},
+	{number: "II-16", theme: "Indépendance"},
+	{number: "II-17", theme: "E(X) ou V(X)"},
+	{number: "II-17", theme: "Probas totales"},
+	{number: "II-17", theme: "Série génératrice"},
+	{number: "II-18", theme: "IPP"},
+	{number: "II-18", theme: "Suite intégrale"},
+	{number: "II-18", theme: "Série entière"},
+	{number: "II-19", theme: "CV intégrale"},
+	{number: "II-19", theme: "Chgt de variable"},
+	{number: "II-20", theme: "Proj. orthogonale"},
+	{number: "II-20", theme: "Droite/plan tangent"},
+	{number: "II-20", theme: "Coniques"},
+	{number: "II-21", theme: "Diagonalisabilité"},
+	{number: "II-21", theme: "Trigonalisabilité"},
+	{number: "II-22", theme: "CV intégrale"},
+	{number: "II-22", theme: "Int. à param."},
+	{number: "II-23", theme: "Base"},
+	{number: "II-23", theme: "Produit scalaire"},
+	{number: "II-23", theme: "orthogonal de F & orthogonalité"},
+	{number: "II-24", theme: "Etude théorique des éltments propres"},
+	{number: "II-25", theme: "Probas totales"},
+	{number: "II-26", theme: "Proj. orthogonale"},
+	{number: "II-26", theme: "Droite/plan tangent"},
+	{number: "II-26", theme: "Coniques"},
+	{number: "II-27", theme: "TVI/Th. de la bijection"},
+	{number: "II-27", theme: "Th. De Rolle"},
+	{number: "II-27", theme: "Fns de 2  var./extrem."},
+	{number: "II-28", theme: "Base"},
+	{number: "II-28", theme: "Somme directe/SEV supplémentaires"},
+	{number: "II-28", theme: "Projecteur"},
+	{number: "II-29", theme: "CV intégrale"},
+	{number: "II-29", theme: "Chgt de variable"},
+	{number: "II-30", theme: "Equa. différentielle"},
+	{number: "II-30", theme: "Polynômes"},
+	{number: "II-30", theme: "Diagonalisabilité"},
+	{number: "II-30", theme: "Etude théorique des éltments propres"},
+	{number: "II-31", theme: "Suite intégrale"},
+	{number: "II-31", theme: "Suite/Série num."},
+	{number: "II-32", theme: "TVI/Th. de la bijection"},
+	{number: "II-32", theme: "Suite implicite"},
+	{number: "II-33", theme: "Polynômes"},
+	{number: "II-34", theme: "A^n"},
+	{number: "II-35", theme: "Géométrie  de base"},
+	{number: "II-35", theme: "Nbs complexes/Géom."},
+	{number: "II-36", theme: "CV intégrale"},
+	{number: "II-36", theme: "Equa. différentielle"},
+	{number: "II-37", theme: "Base"},
+	{number: "II-37", theme: "Produit scalaire"},
+	{number: "II-37", theme: "Esp. euclid./Isométries"},
+	{number: "II-38", theme: "Equa. différentielle"},
+	{number: "II-39", theme: "Diagonalisabilité"},
+	{number: "II-39", theme: "Etude théorique des éltments propres"},
+	{number: "II-39", theme: "A^n"},
+	{number: "II-40", theme: "Fns de 2  var./extrem."},
+	{number: "II-40", theme: "Etude Surface"},
+	{number: "II-40", theme: "Droite/plan tangent"},
+	{number: "II-41", theme: "Polynômes"},
+	{number: "II-41", theme: "Base"},
+	{number: "II-41", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "II-41", theme: "Somme directe/SEV supplémentaires"},
+	{number: "II-41", theme: "Diagonalisabilité"},
+	{number: "II-42", theme: "Polynômes"},
+	{number: "II-42", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "II-42", theme: "Inversibilité matrice"},
+	{number: "II-42", theme: "Diagonalisabilité"},
+	{number: "II-42", theme: "Etude théorique des éltments propres"},
+	{number: "II-43", theme: "CV intégrale"},
+	{number: "II-43", theme: "Chgt de variable"},
+	{number: "II-43", theme: "DL"},
+	{number: "II-44", theme: "DL"},
+	{number: "II-44", theme: "DSE "},
+	{number: "II-44", theme: "Equa. différentielle"},
+	{number: "II-45", theme: "Suite/Série num."},
+	{number: "II-46", theme: "CV intégrale"},
+	{number: "II-46", theme: "Suite intégrale"},
+	{number: "II-47", theme: "Proj. orthogonale"},
+	{number: "II-47", theme: "Etude Surface"},
+	{number: "II-47", theme: "Droite/plan tangent"},
+	{number: "II-48", theme: "Suites arith.géo./réc.lin.2e.ordre"},
+	{number: "II-48", theme: "Probas & algèbre"},
+	{number: "II-48", theme: "Probas totales"},
+	{number: "II-49", theme: "Suite/Série num."},
+	{number: "II-49", theme: "Série entière"},
+	{number: "II-50", theme: "Etude théorique des éltments propres"},
+	{number: "II-51", theme: "Diagonalisabilité"},
+	{number: "II-51", theme: "A^n"},
+	{number: "II-51", theme: "Géométrie  de base"},
+	{number: "II-52", theme: "TVI/Th. de la bijection"},
+	{number: "II-53", theme: "Base"},
+	{number: "II-53", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "II-53", theme: "Diagonalisabilité"},
+	{number: "II-53", theme: "A^n"},
+	{number: "II-54", theme: "Polynômes"},
+	{number: "II-54", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "II-54", theme: "Etude théorique des éltments propres"},
+	{number: "II-55", theme: "TFA"},
+	{number: "II-56", theme: "CV intégrale"},
+	{number: "II-56", theme: "Chgt de variable"},
+	{number: "II-57", theme: "Equa. différentielle"},
+	{number: "II-57", theme: "Polynômes"},
+	{number: "II-57", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "II-57", theme: "Diagonalisabilité"},
+	{number: "II-57", theme: "Etude théorique des éltments propres"},
+	{number: "II-58", theme: "Poly. caractéristique"},
+	{number: "II-58", theme: "A^n"},
+	{number: "II-59", theme: "TFA"},
+	{number: "II-59", theme: "DSE "},
+	{number: "II-59", theme: "Equa. différentielle"},
+	{number: "II-60", theme: "Géométrie  de base"},
+	{number: "II-60", theme: "Coniques"},
+	{number: "II-61", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "II-61", theme: "Produit scalaire"},
+	{number: "II-62", theme: "Géométrie  de base"},
+	{number: "II-62", theme: "Courbe paramétrée"},
+	{number: "II-62", theme: "Enveloppe droites"},
+	{number: "II-63", theme: "Proj. orthogonale"},
+	{number: "II-63", theme: "Etude Surface"},
+	{number: "II-63", theme: "Droite/plan tangent"},
+	{number: "II-64", theme: "Poly. caractéristique"},
+	{number: "II-65", theme: "TFA"},
+	{number: "II-65", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "II-65", theme: "Inversibilité matrice"},
+	{number: "II-65", theme: "Diagonalisabilité"},
+	{number: "II-66", theme: "Suite/Série num."},
+	{number: "II-67", theme: "Probas totales"},
+	{number: "II-68", theme: "Base"},
+	{number: "II-68", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "II-68", theme: "Diagonalisabilité"},
+	{number: "II-68", theme: "Etude théorique des éltments propres"},
+	{number: "II-69", theme: "Diagonalisabilité"},
+	{number: "II-69", theme: "Etude théorique des éltments propres"},
+	{number: "II-70", theme: "Série entière"},
+	{number: "II-70", theme: "E(X) ou V(X)"},
+	{number: "II-70", theme: "Probas totales"},
+	{number: "II-70", theme: "Loi conjointe (X,Y)"},
+	{number: "II-71", theme: "Diagonalisabilité"},
+	{number: "II-71", theme: "Etude théorique des éltments propres"},
+	{number: "II-72", theme: "Suite/Série num."},
+	{number: "II-73", theme: "Diagonalisabilité"},
+	{number: "II-74", theme: "Suite intégrale"},
+	{number: "II-75", theme: "Equa. différentielle"},
+	{number: "II-76", theme: "Diagonalisabilité"},
+	{number: "II-76", theme: "Etude théorique des éltments propres"},
+	{number: "II-76", theme: "A^n"},
+	{number: "II-77", theme: "Géométrie  de base"},
+	{number: "II-77", theme: "Etude Surface"},
+	{number: "II-77", theme: "Droite/plan tangent"},
+	{number: "II-78", theme: "Géométrie  de base"},
+	{number: "II-79", theme: "Base"},
+	{number: "II-79", theme: "Somme directe/SEV supplémentaires"},
+	{number: "II-79", theme: "Projecteur"},
+	{number: "II-80", theme: "CV intégrale"},
+	{number: "II-80", theme: "Int. à param."},
+	{number: "II-80", theme: "DSE "},
+	{number: "II-80", theme: "Equa. différentielle"},
+	{number: "II-81", theme: "Géométrie  de base"},
+	{number: "II-81", theme: "Proj. orthogonale"},
+	{number: "II-82", theme: "Polynômes"},
+	{number: "II-82", theme: "Racines n-ème"},
+	{number: "II-82", theme: "Base"},
+	{number: "II-82", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "II-83", theme: "Polynômes"},
+	{number: "II-83", theme: "Racines n-ème"},
+	{number: "MT-84", theme: "CV intégrale"},
+	{number: "MT-84", theme: "Int. à param."},
+	{number: "MT-84", theme: "DSE "},
+	{number: "MT-84", theme: "Equa. différentielle"},
+	{number: "MT-84", theme: "Polynômes"},
+	{number: "MT-84", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "MT-84", theme: "Diagonalisabilité"},
+	{number: "MT-85", theme: "Chgt de variable"},
+	{number: "MT-85", theme: "Série entière"},
+	{number: "MT-85", theme: "Esp. euclid./Isométries"},
+	{number: "MT-86", theme: "Série entière"},
+	{number: "MT-86", theme: "Produit scalaire"},
+	{number: "MT-86", theme: "Projection/dist./Min"},
+	{number: "MT-87", theme: "CV intégrale"},
+	{number: "MT-87", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "MT-87", theme: "Projection/dist./Min"},
+	{number: "MT-88", theme: "Poly. caractéristique"},
+	{number: "MT-88", theme: "Etude théorique des éltments propres"},
+	{number: "MT-88", theme: "A^n"},
+	{number: "MT-88", theme: "Courbe paramétrée"},
+	{number: "MT-89", theme: "Somme de Riemann"},
+	{number: "MT-89", theme: "Produit scalaire"},
+	{number: "MT-89", theme: "Projection/dist./Min"},
+	{number: "MT-89", theme: "orthogonal de F & orthogonalité"},
+	{number: "MT-90", theme: "Série entière"},
+	{number: "MT-90", theme: "Etude Surface"},
+	{number: "MT-91", theme: "CV intégrale"},
+	{number: "MT-91", theme: "Chgt de variable"},
+	{number: "MT-91", theme: "Equa. différentielle"},
+	{number: "MT-91", theme: "Diagonalisabilité"},
+	{number: "MT-92", theme: "DSE "},
+	{number: "MT-92", theme: "Equa. différentielle"},
+	{number: "MT-92", theme: "E(X) ou V(X)"},
+	{number: "MT-92", theme: "Probas totales"},
+	{number: "MT-92", theme: "Loi conjointe (X,Y)"},
+	{number: "MT-92", theme: "Indépendance"},
+	{number: "MT-93", theme: "Théorème  de la limite monotone"},
+	{number: "MT-93", theme: "Base"},
+	{number: "MT-93", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "MT-94", theme: "Equa. différentielle"},
+	{number: "MT-94", theme: "Diagonalisabilité"},
+	{number: "MT-94", theme: "Etude Surface"},
+	{number: "MT-94", theme: "Droite/plan tangent"},
+	{number: "MT-95", theme: "Série entière"},
+	{number: "MT-95", theme: "Diagonalisabilité"},
+	{number: "MT-95", theme: "E(X) ou V(X)"},
+	{number: "MT-96", theme: "Inversibilité matrice"},
+	{number: "MT-96", theme: "Diagonalisabilité"},
+	{number: "MT-96", theme: "Probas & algèbre"},
+	{number: "MT-96", theme: "Indépendance"},
+	{number: "MT-96", theme: "Etude Surface"},
+	{number: "MT-97", theme: "DSE "},
+	{number: "MT-97", theme: "Probas totales"},
+	{number: "MT-97", theme: "Loi conjointe (X,Y)"},
+	{number: "MT-97", theme: "Indépendance"},
+	{number: "MT-98", theme: "Polynômes"},
+	{number: "MT-98", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "MT-98", theme: "Diagonalisabilité"},
+	{number: "MT-98", theme: "E(X) ou V(X)"},
+	{number: "MT-98", theme: "Loi conjointe (X,Y)"},
+	{number: "MT-98", theme: "Indépendance"},
+	{number: "MT-99", theme: "Th./Inég. des accroiss. finis"},
+	{number: "MT-99", theme: "Suite intégrale"},
+	{number: "MT-99", theme: "Esp. euclid./Isométries"},
+	{number: "MT-100", theme: "CV intégrale"},
+	{number: "MT-100", theme: "Int. à param."},
+	{number: "MT-100", theme: "E(X) ou V(X)"},
+	{number: "MT-100", theme: "Série génératrice"},
+	{number: "I-101", theme: "Fns de 2  var./extrem."},
+	{number: "I-102", theme: "Courbe paramétrée"},
+	{number: "I-103", theme: "Polynômes"},
+	{number: "I-103", theme: "Géométrie  de base"},
+	{number: "I-104", theme: "E(X) ou V(X)"},
+	{number: "I-104", theme: "Indépendance"},
+	{number: "I-105", theme: "Chgt de variable"},
+	{number: "I-105", theme: "Suite intégrale"},
+	{number: "I-106", theme: "Dénombrement"},
+	{number: "I-106", theme: "E(X) ou V(X)"},
+	{number: "I-107", theme: "Polynômes"},
+	{number: "I-108", theme: "Equa. différentielle"},
+	{number: "I-109", theme: "Suite intégrale"},
+	{number: "I-109", theme: "Suite/Série num."},
+	{number: "I-110", theme: "CV intégrale"},
+	{number: "I-110", theme: "Suite intégrale"},
+	{number: "I-110", theme: "Suite/Série num."},
+	{number: "I-111", theme: "E(X) ou V(X)"},
+	{number: "I-111", theme: "Indépendance"},
+	{number: "I-112", theme: "TVI/Th. de la bijection"},
+	{number: "I-112", theme: "Fns de 2  var./extrem."},
+	{number: "I-113", theme: "Base"},
+	{number: "I-113", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "I-113", theme: "Inversibilité matrice"},
+	{number: "I-113", theme: "Diagonalisabilité"},
+	{number: "I-113", theme: "A^n"},
+	{number: "I-114", theme: "DSE "},
+	{number: "I-114", theme: "Poly. caractéristique"},
+	{number: "I-114", theme: "Trigonalisabilité"},
+	{number: "I-115", theme: "Int. à param."},
+	{number: "I-116", theme: "Diagonalisabilité"},
+	{number: "I-116", theme: "Etude théorique des éltments propres"},
+	{number: "I-116", theme: "Produit scalaire"},
+	{number: "I-116", theme: "Esp. euclid./Isométries"},
+	{number: "I-117", theme: "Calcul de f^(n)"},
+	{number: "I-117", theme: "Polynômes"},
+	{number: "I-118", theme: "Int. à param."},
+	{number: "I-118", theme: "Equa. différentielle"},
+	{number: "I-119", theme: "E(X) ou V(X)"},
+	{number: "I-119", theme: "Probas totales"},
+	{number: "I-120", theme: "E(X) ou V(X)"},
+	{number: "I-120", theme: "Loi conjointe (X,Y)"},
+	{number: "I-121", theme: "Polynômes"},
+	{number: "I-121", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "I-121", theme: "Somme directe/SEV supplémentaires"},
+	{number: "I-121", theme: "Diagonalisabilité"},
+	{number: "I-121", theme: "Etude théorique des éltments propres"},
+	{number: "I-122", theme: "Suite/Série num."},
+	{number: "I-122", theme: "Indépendance"},
+	{number: "I-123", theme: "TVI/Th. de la bijection"},
+	{number: "I-123", theme: "Suite implicite"},
+	{number: "I-123", theme: "DL"},
+	{number: "I-124", theme: "Poly. caractéristique"},
+	{number: "I-124", theme: "Etude théorique des éltments propres"},
+	{number: "I-125", theme: "Série entière"},
+	{number: "I-125", theme: "DSE "},
+	{number: "I-125", theme: "Dénombrement"},
+	{number: "I-126", theme: "IPP"},
+	{number: "I-126", theme: "Suite intégrale"},
+	{number: "I-127", theme: "Base"},
+	{number: "I-127", theme: "Endomorphisme/Ker f/Imf"},
+	{number: "I-127", theme: "Diagonalisabilité"}
+      ];
+	
+	// Get the form element
+	let form = document.getElementById("form");
+
+	// Add an event listener to the form to handle form submission
+	form.addEventListener("submit", function(event) {
+		// Prevent the default form submission behavior
+		event.preventDefault();
+
+		// Get the selected type from the form
+		let type = document.getElementById("type").value;
+
+		if (type === "themes") {
+		  // Get the selected themes from the form
+		  let checkboxes = document.querySelectorAll("input[name='themes']:checked");
+		  let selectedThemes = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+		  // Get the selected condition from the form
+		  let condition = document.getElementById("condition").value;
+
+		  if (condition === "and") {
+			// Find the numbers that correspond to all of the selected themes
+			let numbers = table.reduce((acc, row) => {
+				if (selectedThemes.includes(row.theme)) {
+				  acc[row.number] = (acc[row.number] || 0) + 1;
+				}
+				return acc;
+			}, {});
+
+			numbers = Object.keys(numbers).filter(number => numbers[number] === selectedThemes.length).map(number => number);
+
+			// Eliminate duplicates from the result
+			numbers = [...new Set(numbers)];
+
+
+			// Display the numbers
+			let chunk = 15; // Nombre de mots par paquet
+			let output = document.getElementById("output");
+			output.setAttribute('style', 'white-space: pre;');			
+			output.innerHTML = "     Planches: " ;
+			for (let i = 0; i < numbers.length; i += chunk) {
+				for (let j = 0; j < (numbers.slice(i, i + chunk)).length; j += 1) {
+					let nb=numbers[j]
+					output.innerHTML+= `<a href="http://PTOraux.github.io/sujet-${nb}.png"  target="_blank">${nb}</a>, `;
+				}
+				output.innerHTML+="\n"+"\xa0".repeat(22)
+			}
+		  } else {
+			// Find the numbers that correspond to any of the selected themes
+			let numbers = table.filter(row => selectedThemes.some(theme => row.theme === theme)).map(row => row.number);
+			
+			// Eliminate duplicates from the result
+			numbers = [...new Set(numbers)];
+
+			// Display the numbers
+			let chunk = 15; // Nombre de mots par paquet
+			let output = document.getElementById("output");
+			output.setAttribute('style', 'white-space: pre;');
+			output.innerHTML = "     Planches: " ;
+			for (let i = 0; i < numbers.length; i += chunk) {
+				for (let j = 0; j < (numbers.slice(i, i + chunk)).length; j += 1) {
+					let nb=numbers[j]
+					output.innerHTML+= `<a href="http://PTOraux.github.io/sujet-${nb}.png"  target="_blank">${nb}</a>, `;
+				}
+				output.innerHTML+="\n"+"\xa0".repeat(22)
+			}
+
+		  }
+		} else {
+		  // Get the selected numbers from the form
+		  let checkboxes = document.querySelectorAll("input[name='numbers']:checked");
+		  let selectedNumbers = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+		  // Find the themes that correspond to the selected numbers
+		  let themes = table.filter(row => selectedNumbers.includes(row.number)).map(row => row.theme);
+		  
+		  
+		  // Display the themes
+		  let chunk = 7; // Nombre de mots par paquet
+		  let output = document.getElementById("output");
+		  output.setAttribute('style', 'white-space: pre;');
+		  output.textContent = "     Thèmes : " ;
+		  for (let i = 0; i < themes.length; i += chunk) {
+				output.textContent+=themes.slice(i, i + chunk).join(', ')+"\n"+"\xa0".repeat(21);
+		  }
+		}
+		});
+
+		// Add an event listener to the type select element to show/hide the themes/numbers containers
+		let typeSelect = document.getElementById("type");
+		typeSelect.addEventListener("change", function() {
+		let type = this.value;
+		if (type === "themes") {
+		  document.getElementById("themes-container").style.display = "block";
+		  document.getElementById("numbers-container").style.display = "none";
+		} else {
+		  document.getElementById("themes-container").style.display = "none";
+		  document.getElementById("numbers-container").style.display = "block";
+		}
+	});
+</script>
+</body>
+</html>
