@@ -7,9 +7,6 @@
     <title>Thèmes et Planches</title>
 </head>
 <style>
-    table td {
-	padding-right : 0px
-    }
   body {
 	background-image: url('./fond.avif');
 	background-size: cover;
@@ -63,9 +60,9 @@
 	<button type="reset" onClick="window.location.reload()" STYLE="font-size : 16pt"> Réinitialiser </button>
 	<div id="themes-container">
 	<p>Choisissez un ou plusieurs thèmes et une condition :</p>
-	<table>
+	<table style="width : 100%">
 	<tr>
-        <td VALIGN=TOP style="width:40em">><b>Analyse  : </b><br>
+        <td VALIGN=TOP ><b>Analyse  : </b><br>
 			&emsp;<input type="checkbox" id="theme-A" name="themes" value="Théorème  de la limite monotone">
 			<label for="theme-A">Théorème  de la limite monotone</label><br>
 			&emsp;<input type="checkbox" id="theme-B" name="themes" value="TVI/Th. de la bijection">
@@ -189,7 +186,7 @@
       </div>
       <div id="numbers-container" style="display: none;">
         <p>Choisir une planche:</p>
-		<table cellspacing="0">
+		<table cellspacing="0" style="width : 100%">
 		<tr>
        		<td VALIGN=TOP ><b>Oral II : </b><br>
 			&emsp;<input type="checkbox" id="Planche-II-1" name="numbers" value="II-1">
