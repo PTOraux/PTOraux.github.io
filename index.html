@@ -39,11 +39,13 @@
 	  var content = document.getElementById("content" + id);
 	  var triangle = document.getElementById("triangle" + id);
 	  if (content.style.display === "block") {
-	    content.style.display = "none";
+	    content.style.display = "block";
 	    triangle.classList.remove("rotate");
+	    transform: rotate(-90deg);
 	  } else {
 	    content.style.display = "block";
 	    triangle.classList.add("rotate");
+	    transform: rotate(90deg);
 	  }
 	}
 </script>
