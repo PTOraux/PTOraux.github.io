@@ -42,9 +42,6 @@
 	}
 </style>
 
-	
-
-	
 <script>
 	function toggleContent(id) {
 	  var content = document.getElementById("content" + id);
@@ -58,6 +55,18 @@
 	  }
 	}
 </script>
+
+<script>
+function selectAllColumn(column) {
+  // Récupère toutes les cases à cocher de la colonne
+  var checkboxes = document.querySelectorAll(`td:nth-child(${column}) input[type=checkbox]`);
+  // Coche ou décoche toutes les cases à cocher en fonction de l'état de la case à cocher de la colonne
+  for (var i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].checked = event.target.checked;
+  }
+}
+</script>
+	
 <body STYLE="font-size : 13pt">
 	<h1>Thèmes et Planches</h1>
 	<b><Font size=5pt><a href="https://drive.google.com/file/d/1fSi6BbyDI2bZQWdk4f3t7nmgihYjsUbj"  target="_blank"> Cliquez ici pour voir le livret complet  </a></Font></b>
