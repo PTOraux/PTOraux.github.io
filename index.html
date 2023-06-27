@@ -1756,7 +1756,7 @@ function selectAllColumn(column) {
 			output.innerHTML = "     Planches: " ;
 			for (let i = 0; i < numbers.length; i += chunk) {
 				for (let j = 0; j < (numbers.slice(i, i + chunk)).length; j += 1) {
-					let nb=numbers[j]
+					let nb=numbers[i+j]
 					output.innerHTML+= `<a href="http://PTOraux.github.io/sujet-${nb}.png"  target="_blank">${nb}</a>, `;
 				}
 				output.innerHTML+="\n"+"\xa0".repeat(22)
@@ -1775,7 +1775,7 @@ function selectAllColumn(column) {
 			output.innerHTML = "     Planches: " ;
 			for (let i = 0; i < numbers.length; i += chunk) {
 				for (let j = 0; j < (numbers.slice(i, i + chunk)).length; j += 1) {
-					let nb=numbers[j]
+					let nb=numbers[i+j]
 					output.innerHTML+= `<a href="http://PTOraux.github.io/sujet-${nb}.png"  target="_blank">${nb}</a>, `;
 				}
 				output.innerHTML+="\n"+"\xa0".repeat(22)
