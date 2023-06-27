@@ -1789,7 +1789,8 @@ function selectAllColumn(column) {
 
 		  // Find the themes that correspond to the selected numbers
 		  let themes = table.filter(row => selectedNumbers.includes(row.number)).map(row => row.theme);
-		  
+
+		  themes = [...new Set(themes)];
 		  
 		  // Display the themes
 		  let chunk = 7; // Nombre de mots par paquet
