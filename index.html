@@ -1297,7 +1297,7 @@ function selectAllColumn(column) {
 			</label></input>
 			<br>
 		</td>
-		<td VALIGN=TOP><input type="checkbox" onclick="selectAllColumn(1))" style="transform: scale(1.35);"> <b>Oral I : </b><br>
+		<td VALIGN=TOP><input type="checkbox" onclick="selectAllColumn(2))" style="transform: scale(1.35);"> <b>Oral I : </b><br>
 			&emsp;<input type="checkbox" id="Planche-I-1" name="orauxMTI" value="I-1">
 			<label for="number-I-1"> <span onclick="toggleContent('I-1')">Planche I-1 <Font size=4.5pt><span class="triangle" id="triangleI-1">&#9654;</span> </Font></span>
 				<div class="content" id="contentI-1" style="padding-left : 50pt;"> <Font size=4.5pt><a href="http://PTOraux.github.io/sujet-I-1.png"  target="_blank"> Enoncé </a> 
@@ -1996,8 +1996,6 @@ function selectAllColumn(column) {
 		  for (let i = 0; i < themes.length; i += chunk) {
 				output.textContent+=themes.slice(i, i + chunk).join(', ')+"\n"+"\xa0".repeat(21);
 		  }
-		}
-
 		} else {
 		  // Get the selected numbers from the form
 		  let checkboxes = document.querySelectorAll("input[name='orauxMTI']:checked");
