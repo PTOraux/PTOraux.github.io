@@ -76,7 +76,8 @@ function selectAllColumn(column) {
 	<label for="type">Recherche à partir des thèmes ou des planches ?</label><br>
 	<select name="type" id="type" STYLE="font-size : 15pt">
 	<option value="themes">Thèmes</option>
-	<option value="numbers">Planches</option>
+	<option value="numbers">Planches oral II</option>
+	<option value="numbers2">Planches oraux MT & I</option>
 	</select><br>
 		
 	<br>
@@ -1091,7 +1092,21 @@ function selectAllColumn(column) {
 				</div>
 			</label></input>
 			<br>
-		</td>
+			</td>
+			</tr>
+		   </table>
+	      </div>
+		  <br>
+		  <br>
+	      <input type="submit" value="Rechercher" STYLE="font-size : 15pt">
+	    </form>
+		<br>
+	    <div id="output"></div>
+
+	<div id="numbers2-container" style="display: none;">
+	<p>Choisir une planche:</p>
+	<table cellspacing="0" style="width : 100%">
+	<tr>
 		<td VALIGN=TOP><b>Mines-Telecom : </b><br>
 			&emsp;<input type="checkbox" id="Planche-MT-1" name="numbers" value="MT-1">
 			<label for="number-MT-1"> <span onclick="toggleContent('MT-1')">Planche MT-1 <Font size=4.5pt><span class="triangle" id="triangleMT-1">&#9654;</span> </Font></span>
