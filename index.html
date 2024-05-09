@@ -1978,9 +1978,29 @@ function selectAllColumn(column) {
 			}
 
 		  }
-		} else {
+		} else (type === "numbers") {
 		  // Get the selected numbers from the form
 		  let checkboxes = document.querySelectorAll("input[name='numbers']:checked");
+		  let selectedNumbers = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+		  // Find the themes that correspond to the selected numbers
+		  let themes = table.filter(row => selectedNumbers.includes(row.number)).map(row => row.theme);
+
+		  themes = [...new Set(themes)];
+		  
+		  // Display the themes
+		  let chunk = 7; // Nombre de mots par paquet
+		  let output = document.getElementById("output");
+		  output.setAttribute('style', 'white-space: pre;');
+		  output.textContent = "     Thèmes : " ;
+		  for (let i = 0; i < themes.length; i += chunk) {
+				output.textContent+=themes.slice(i, i + chunk).join(', ')+"\n"+"\xa0".repeat(21);
+		  }
+		}
+
+		} else {
+		  // Get the selected numbers from the form
+		  let checkboxes = document.querySelectorAll("input[name='orauxMTI']:checked");
 		  let selectedNumbers = Array.from(checkboxes).map(checkbox => checkbox.value);
 
 		  // Find the themes that correspond to the selected numbers
@@ -2015,6 +2035,7 @@ function selectAllColumn(column) {
 		  document.getElementById("themes-container").style.display = "none";
 		  document.getElementById("numbers-container").style.display = "none";
 		  document.getElementById("orauxMTI-container").style.display = "block";
+		}
 		// Récupérez toutes les cases à cocher
 		var checkboxes = document.querySelectorAll("input[type='checkbox']");
 
