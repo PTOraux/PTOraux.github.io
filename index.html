@@ -1978,7 +1978,7 @@ function selectAllColumn(column) {
 			}
 
 		  }
-		} else (type === "numbers") {
+		} else if (type === "numbers") {
 		  // Get the selected numbers from the form
 		  let checkboxes = document.querySelectorAll("input[name='numbers']:checked");
 		  let selectedNumbers = Array.from(checkboxes).map(checkbox => checkbox.value);
