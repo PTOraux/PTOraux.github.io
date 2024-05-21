@@ -1615,8 +1615,13 @@ function selectAllColumn(column) {
     <div id="output"></div>
 
 <script>
+	document.getElementById("themes-container").style.display = "none";
+	document.getElementById("numbers-container").style.display = "block";
+	document.getElementById("orauxMTI-container").style.display = "none";
+
+	
 	// Define your table of numbers and themes
-      let table = [
+      	let table = [
 		{number: "II-1", theme: "Endomorphisme/Ker f/Imf"},
 		{number: "II-2", theme: "DL"},
 		{number: "II-2", theme: "DSE "},
